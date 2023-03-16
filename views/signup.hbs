@@ -1,0 +1,128 @@
+<style>
+    *,
+    *:before,
+    *:after {
+    margin: 0;
+    padding: 0;
+    font-family: inherit;
+    box-sizing: border-box;
+    }
+    .login {
+    width: max-content;
+    margin: 40px auto;
+    font-family: "Segoe UI", sans-serif;
+    padding: 25px 28px;
+    background: #151414;
+    border-radius: 4px;
+    border: 1px solid #302d2d;
+    animation: popup 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    }
+    body{
+        background: #1c1b1b;
+    }
+    .login-box-msg{
+        color: white;
+    }
+    @keyframes popup {
+    0% {
+        transform: scale(0.2);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    }
+    h2 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 20px;
+    font-weight: 400;
+    color: #e7e7e7;
+    }
+    .input-parent {
+    display: block;
+    margin-bottom: 20px;
+    }
+    .input-parent input {
+    padding: 10px 8px;
+    width: 100%;
+    font-size: 16px;
+    background: #323131;
+    border: none;
+    color: #c7c7c7;
+    border-radius: 4px;
+    outline: none;
+    transition: all 0.2s ease;
+    }
+    .input-parent input:hover {
+    background: #404040;
+    }
+    .input-parent input:focus {
+    box-shadow: 0px 0px 0px 1px #0087ff;
+    }
+    button {
+    padding: 10px 18px;
+    font-size: 15px;
+    background: #1a3969;
+    width: 100%;
+    border: none;
+    border-radius: 4px;
+    color: #f4f4f4;
+    transition: all 0.2s ease;
+    }
+    button:hover {
+    opacity: 0.9;
+    }
+    button:focus {
+    box-shadow: 0px 0px 0px 3px black;
+    }
+</style>
+
+<div class="login">            
+            <div class="login-box d-md-table-cell">      
+                <div class="card">
+                    <div class="card-body login-card-body">   
+                        <form action="/signup" id="login" method="post">
+                            <h2 class="login-box-msg">Create an Admin</h2>
+                            <div class="input-parent">
+                                <input type="text" name="username" id="username_id" class="form-control input-lg" placeholder="Username" required >
+                                <div class="input-group-append">
+                                    <div class="input-group-text">
+                                        <span class="fas fa-envelope"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="input-parent">
+                                <input type="password" name="password" id="password_id" class="form-control input-lg" placeholder="password" required>
+                                <div class="input-group-append">
+                                    <div class="input-group-text">
+                                        <span class="fas fa-lock"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-4">
+                                    <button type="submit" class="btn btn-primary btn-block">Sign up</button>
+                                </div>
+                                <!-- /.col -->
+                            </div>
+
+                        </form>
+
+                        <div class="row mt-3">
+                            <div class="col-auto">
+                                <a href="#">Francais</a>
+                            </div>
+                            <!-- /.col -->
+                            <div class="col-auto">
+                                <a href="#">English</a>
+                            </div>
+                            <!-- /.col -->
+                        </div>
+                    </div>
+                    <!-- /.login-card-body -->
+                </div>
+            </div>
+        </div>
