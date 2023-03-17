@@ -7,7 +7,8 @@ var User = require('./models/user');
 var morgan = require('morgan');
 var session = require('express-session');
 var path = require('path');
-
+var passport = require('passport');
+var router = express.Router();
 
 require('dotenv').config();
 
@@ -99,9 +100,9 @@ app.route('/login')
 
       User.findOne({ where: { username: username } }).then(function (user) {
         if (!user) {
-          res.redirect('login');
+          res.redirect('/login');
         } else if (!user.validPassword(password)) {
-          res.redirect('login');
+          res.redirect('/login');
         }else {
           req.session.user = user.dataValues;
           res.redirect('dashboard')
@@ -117,7 +118,7 @@ app.get('/dashboard', (req, res) => {
     hbsContent.title = "logged in";
     res.render('dashboard', hbsContent);
   } else {
-      res.redirect('/login');
+      res.redirect('login');
   }
 });
 
@@ -127,11 +128,27 @@ app.get('/logout', (req, res) => {
     hbsContent.loggedin = true;
     hbsContent.title = "logged out";
     res.clearCookie('user_sid');
-    res.redirect('/login');
+    res.redirect('/');
   } else {
     res.redirect('/login');
   }
 });
+
+//function to Check if Authenticated || we use this "checkAuthenticated" middleware
+
+function checkAuthenticated(req, res, next) {
+  if (req.isAuthenticated()) {
+    return next();
+  }
+  res.redirect('/login');
+}
+
+function checkNotAuthenticated(req, res, next) {
+  if (req.isAuthenticated()) {
+    res.redirect('/');
+  }
+  next();
+}
 
 
 

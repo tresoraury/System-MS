@@ -1,115 +1,160 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
-  <!--     Fonts and icons     -->
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-  <!-- CSS Files -->
-  <link href="../assets/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="../assets/css/now-ui-dashboard.css?v=1.5.0" rel="stylesheet" />
-  <!-- CSS Just for demo purpose, don't include it in your project -->
-  <link href="../assets/demo/demo.css" rel="stylesheet" />
-
-  <link rel="stylesheet" href="">
-</head>
-
-<body class="">
-  <div class="wrapper ">
-    <div class="sidebar" data-color="yellow">
-      <!--
-        Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red | yellow"
-    -->
+   <head>
+      <!-- Required meta tags -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- Bootstrap CSS -->
+      <link href="/css/bootstrap.min.css" rel="stylesheet">
+      <link rel="stylesheet" href="/css/bootstrap-icons.css">
+      <link rel="stylesheet" href="/css/admin-style.css">
       
-      <div class="sidebar-wrapper" id="sidebar-wrapper">
-        <ul class="nav">
-          <li class="">
-            <a href="/dashboard">
-              <i class="fas fa-home fa-5x"></i>
-              <p>Acceuil</p>
-            </a>
-          </li>
-          <li class="">
-            <a href="">
-              <i class="fa fa-align-center"></i>
-              <p>Point of sales</p>
-            </a>
-          </li>
-          <li  class="">
-            <a href="">
-              <i class="fa fa-shopping-cart"></i>
-              <p>Products</p>
-            </a>
-          </li>
-          <li class="">
-            <a href="">
-              <i class="fas fa-tools"></i>
-              <p>Requisition</p>
-            </a>
-          </li>
-          <li class="">
-            <a href="">
-              <i class="now-ui-icons users_single-02"></i>
-              <p>Admin</p>
-            </a>
-          </li>
-          <li class="">
-            <a href="">
-              <i class="fas fa-user-circle"></i>
-              <p>Inventory</p>
-            </a>
-          </li>
-          <li class="">
-            <a href="">
-              <i class="fas fa-cart-arrow-down"></i>
-              <p>Partners</p>
-            </a>
-          </li>
-          <li class="active-pro">
-            <a href="./upgrade.html">
-              <i class="fas fa-history"></i>
-              <p>Historique</p>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
 
-    <div class="main-panel" id="main-panel">
-      <!-- Navbar -->
-      <nav class="navbar navbar-expand-lg navbar-transparent  bg-primary  navbar-absolute">
-        <div class="container-fluid">
-          <div class="navbar-wrapper">
-            <div class="navbar-toggle">
-              <button type="button" class="navbar-toggler">
-                <span class="navbar-toggler-bar bar1"></span>
-                <span class="navbar-toggler-bar bar2"></span>
-                <span class="navbar-toggler-bar bar3"></span>
-              </button>
+      <title>Dashboard</title>
+   </head>
+   <body>
+      <header class="navbar navbar-expand-lg navbar-light">
+         <div class="container-fluid">
+            <a class="navbar-brand text-white ml-4" href="/dashboard"><b>Pharmacy MS</b></a>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+               <div class="mr-5">
+                  <ul class="navbar-nav mr-auto mr-0">
+                     <li class="nav-item">
+                        <a class="nav-link text-white" href="/login">Logout</a>
+                     </li>
+                  </ul>
+               </div>
             </div>
-            <a class="navbar-brand" href="#pablo">LISTE DES TABLE</a>
-          </div>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-bar navbar-kebab"></span>
-            <span class="navbar-toggler-bar navbar-kebab"></span>
-            <span class="navbar-toggler-bar navbar-kebab"></span>
-          </button>
-          <div class="collapse navbar-collapse justify-content-end" id="navigation">
-            <form>
-              <div class="input-group no-border">
-                
-                <div class="input-group-append">
-                  <div class="input-group-text">
-                    
-                  </div>
-                </div>
-              </div>
-            </form>
-        </div>
-    </div>
-</nav>
-</div>
-</div>
-</body>
+         </div>
+      </header>
+      <div class="container-fluid bg-side-nav">
+         <div class="row">
+            <div class="col-lg-2 sidebaare">
+               <aside>
+                  <nav class="sidebar py-2 mb-4">
+                     <ul class="nav flex-column" id="nav_accordion">                      
+                        <li class="nav-item">
+                           <a class="nav-link" data-bs-toggle="collapse" data-bs-target="#menu_item1" href="#"> Point Of Sales <i class="bi small bi-caret-down-fill"></i> </a>
+                           <ul id="menu_item1" class="submenu collapse" data-bs-parent="#nav_accordion">
+                              <li><a class="nav-link" href="/admin/pages.html">Make A Sale </a></li>
+                              <li><a class="nav-link" href="/admin/pages/add-pages/">Sales </a></li>
+                           </ul>
+                        </li>
+                        <li class="nav-item">
+                           <a class="nav-link" data-bs-toggle="collapse" data-bs-target="#menu_item2" href="#"> Requisition <i class="bi small bi-caret-down-fill"></i> </a>
+                           <ul id="menu_item2" class="submenu collapse" data-bs-parent="#nav_accordion">
+                              <li><a class="nav-link" href="/admin/category.html/">All Requisition </a></li>
+                              <li><a class="nav-link" href="/admin/category/add-category/">Add Requisition </a></li>               
+                           </ul>
+                        </li>
+                        <li class="nav-item">
+                           <a class="nav-link" data-bs-toggle="collapse" data-bs-target="#menu_item3" href="#"> Products <i class="bi small bi-caret-down-fill"></i> </a>
+                           <ul id="menu_item3" class="submenu collapse" data-bs-parent="#nav_accordion">
+                              <li><a class="nav-link" href="/admin/products/">All Products</a></li>
+                              <li><a class="nav-link" href="/admin/products/add-products/">Add Products </a></li>              
+                           </ul>
+                        </li>
+                        <li class="nav-item">
+                           <a class="nav-link" data-bs-toggle="collapse" data-bs-target="#menu_item4" href="#"> Inventory <i class="bi small bi-caret-down-fill"></i> </a>
+                           <ul id="menu_item4" class="submenu collapse" data-bs-parent="#nav_accordion">
+                              <li><a class="nav-link" href="/admin/inventory/">Issue stock</a></li>
+                              <li><a class="nav-link" href="/admin/products/added-stock/">Added stock </a></li>
+                              <li><a class="nav-link" href="/admin/products/lost-stock/">Loss stock </a></li>
+                           </ul>
+                        </li>
+                        <li class="nav-item">
+                           <a class="nav-link" data-bs-toggle="collapse" data-bs-target="#menu_item5" href="#"> Partners <i class="bi small bi-caret-down-fill"></i> </a>
+                           <ul id="menu_item5" class="submenu collapse" data-bs-parent="#nav_accordion">
+                              <li><a class="nav-link" href="/admin/view-partners/">View Partners</a></li>
+                              <li><a class="nav-link" href="/admin/products/add-partner/">Add Partners </a></li>          
+                           </ul>
+                        </li>                      
+                     </ul>
+                  </nav>
+               </aside>
+            </div>
+            <div class="col-lg-10">
 
+              <div class="dashboard-content-area">
+                <!-- put your contente -->
+<h1>Dashboard</h1>
+               <div class="row">
+                  <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <div class="small-box bg-info">
+                      <div class="inner">
+                        <h3>150</h3>
+        
+                        <p>Sales Made today</p>
+                      </div>
+                      <div class="icon">
+                        <i class="ion ion-bag"></i>
+                      </div>
+                      <a href="/admin/pages/" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                    </div>
+                  </div>
+                  <!-- ./col -->
+                  <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <div class="small-box bg-success">
+                      <div class="inner">
+                        <h3>53<sup style="font-size: 20px"></sup></h3>
+        
+                        <p>Requisition today</p>
+                      </div>
+                      <div class="icon">
+                        <i class="ion ion-stats-bars"></i>
+                      </div>
+                      <a href="/admin/category/" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                    </div>
+                  </div>
+                  <!-- ./col -->
+                  <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <div class="small-box bg-warning">
+                      <div class="inner">
+                        <h3>44</h3>
+        
+                        <p>All Products</p>
+                      </div>
+                      <div class="icon">
+                        <i class="ion ion-person-add"></i>
+                      </div>
+                      <a href="/admin/products/" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                    </div>
+                  </div>
+                  <!-- ./col -->
+            
+                  <div class="col-lg-3 col-6">
+                    <div class="small-box bg-danger">
+                      <div class="inner">
+                        <h3>65</h3>
+        
+                        <p>Stock Reel</p>
+                      </div>
+                      <div class="icon">
+                        <i class="ion ion-pie-graph"></i>
+                      </div>
+                      <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                    </div>
+                  </div>
+                </div> 
+
+              <!-- end your content here -->
+             </div>
+
+            </div>
+         </div>
+      </div>
+      <script src="js/bootstrap.bundle.min.js"></script>
+      <script src="js/jquery.min.js"></script>
+      <link rel="stylesheet" type="text/css" href="js/datatables.min.css"/>
+      <script type="text/javascript" src="js/datatables.min.js"></script>
+      <script type="text/javascript">
+         $(document).ready(function() {
+             $('#dataTable').DataTable();
+              rowReorder: true
+           });
+      </script>
+   </body>
+</html>
